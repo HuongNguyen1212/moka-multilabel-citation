@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Citation Intent Annotation</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f0f4f8;
+      color: #1a202c;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: #1e3a5f;
+      color: white;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    header h1 { font-size: 1.1rem; font-weight: 600; white-space: nowrap; }
+
+    .progress-wrap { flex: 1; min-width: 160px; max-width: 400px; }
+    .progress-label { font-size: 0.8rem; margin-bottom: 4px; opacity: 0.85; }
+    .progress-bar {
+      background: rgba(255,255,255,0.25);
+      border-radius: 4px;
+      height: 8px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      background: #48bb78;
+      height: 100%;
+      transition: width 0.3s;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 860px;
+      margin: 24px auto;
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .card h3 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: #718096;
+      margin-bottom: 12px;
+    }
+
+    /* ── Navigation ── */
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-bar button {
+      padding: 7px 16px;
+      border: 1.5px solid #cbd5e0;
+      border-radius: 6px;
+      background: white;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background .15s;
+    }
+    .nav-bar button:hover:not(:disabled) { background: #edf2f7; }
+    .nav-bar button:disabled { opacity: 0.4; cursor: default; }
+
+    .nav-counter { font-size: 0.9rem; color: #4a5568; flex: 1; text-align: center; }
+    .nav-jump { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+    .nav-jump input {
+      width: 60px; padding: 5px 8px;
+      border: 1.5px solid #cbd5e0; border-radius: 6px;
+      font-size: 0.9rem; text-align: center;
+    }
+    .nav-jump button {
+      padding: 5px 10px;
+      border: 1.5px solid #4299e1; border-radius: 6px;
+      background: #ebf8ff; color: #2b6cb0;
+      cursor: pointer; font-size: 0.85rem;
+    }
+
+    /* ── Annotated badge ── */
+    .badge-annotated {
+      display: inline-block;
+      background: #c6f6d5; color: #276749;
+      font-size: 0.72rem; font-weight: 600;
+      padding: 2px 8px; border-radius: 12px;
+      margin-left: 8px; vertical-align: middle;
+    }
+
+    /* ── Paragraph ── */
+    .paragraph { line-height: 1.75; font-size: 0.95rem; color: #2d3748; }
+    .sentence { display: inline; }
+    .sentence.highlight {
+      background: #fefcbf;
+      border-radius: 3px;
+      padding: 1px 3px;
+      font-weight: 500;
+    }
+    .author-tag {
+      background: #bee3f8;
+      color: #2c5282;
+      border-radius: 3px;
+      padding: 0 3px;
+      font-size: 0.85em;
+      font-weight: 600;
+    }
+
+    /* ── Labels ── */
+    .labels-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    @media (max-width: 560px) { .labels-grid { grid-template-columns: 1fr; } }
+
+    .label-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
+    }
+    .label-item:hover { border-color: #90cdf4; background: #ebf8ff; }
+    .label-item.selected { border-color: #3182ce; background: #ebf8ff; }
+    .label-item input[type="checkbox"] { margin-top: 2px; cursor: pointer; accent-color: #3182ce; }
+    .label-name { font-weight: 600; font-size: 0.9rem; display: block; }
+    .label-desc { font-size: 0.78rem; color: #718096; margin-top: 2px; }
+
+    .unclear-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 12px;
+      border: 1.5px dashed #e2e8f0;
+      border-radius: 8px; cursor: pointer;
+      font-size: 0.88rem; color: #718096;
+    }
+    .unclear-item:hover { border-color: #fc8181; background: #fff5f5; color: #c53030; }
+    .unclear-item.selected { border-color: #fc8181; background: #fff5f5; color: #c53030; }
+
+    /* ── Actions ── */
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 10px 24px;
+      background: #3182ce; color: white;
+      border: none; border-radius: 8px;
+      font-size: 0.95rem; font-weight: 600;
+      cursor: pointer; transition: background .15s;
+    }
+    .btn-primary:hover { background: #2b6cb0; }
+    .btn-secondary {
+      padding: 10px 20px;
+      background: white; color: #4a5568;
+      border: 1.5px solid #cbd5e0; border-radius: 8px;
+      font-size: 0.95rem; cursor: pointer; transition: background .15s;
+    }
+    .btn-secondary:hover { background: #edf2f7; }
+
+    /* ── Footer ── */
+    footer {
+      max-width: 860px;
+      margin: 0 auto 32px;
+      padding: 0 16px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .btn-export {
+      padding: 8px 18px;
+      background: #276749; color: white;
+      border: none; border-radius: 7px;
+      font-size: 0.88rem; cursor: pointer;
+    }
+    .btn-export:hover { background: #22543d; }
+    .btn-import-label {
+      padding: 8px 18px;
+      background: white; color: #4a5568;
+      border: 1.5px solid #cbd5e0; border-radius: 7px;
+      font-size: 0.88rem; cursor: pointer;
+    }
+    .btn-import-label:hover { background: #edf2f7; }
+    .footer-note { font-size: 0.78rem; color: #a0aec0; }
+
+    /* ── Toast ── */
+    #toast {
+      position: fixed; bottom: 24px; right: 24px;
+      background: #2d3748; color: white;
+      padding: 10px 18px; border-radius: 8px;
+      font-size: 0.88rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s;
+      z-index: 100;
+    }
+    #toast.show { opacity: 1; }
+
+    #loading { text-align: center; padding: 80px 24px; color: #718096; font-size: 1.1rem; }
+
+    /* ── Instructions ── */
+    .instructions {
+      background: #ebf8ff;
+      border: 1.5px solid #bee3f8;
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 0.88rem;
+      color: #2c5282;
+      line-height: 1.7;
+    }
+    .instructions summary {
+      font-weight: 600; cursor: pointer; font-size: 0.9rem;
+      list-style: none;
+    }
+    .instructions summary::before { content: "ℹ️  "; }
+    .instructions ul { margin: 10px 0 0 16px; }
+    .instructions li { margin-bottom: 4px; }
+    .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 10px; }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.83rem; }
+    /* ── Annotator name ── */
+    .name-bar {
+      display: flex; align-items: center; gap: 10px;
+      background: white; border-radius: 10px;
+      padding: 12px 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      font-size: 0.9rem; color: #4a5568;
+    }
+    .name-bar label { font-weight: 600; white-space: nowrap; }
+    .name-bar input {
+      flex: 1; max-width: 280px;
+      padding: 6px 12px;
+      border: 1.5px solid #cbd5e0; border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .name-bar input:focus { outline: none; border-color: #3182ce; }
+    .name-required { color: #e53e3e; font-size: 0.8rem; }
+
+    .legend-cite {
+      background: #bee3f8; color: #2c5282;
+      border-radius: 3px; padding: 0 5px;
+      font-size: 0.8em; font-weight: 600;
+    }
+    .legend-highlight {
+      background: #fefcbf; border-radius: 3px;
+      padding: 1px 6px; font-size: 0.83rem;
+    }
+  </style>
+</head>
+<body>
+
+<div id="loading">Loading annotation data…</div>
+
+<div id="app" style="display:none">
+  <header>
+    <h1>Citation Intent Annotation</h1>
+    <div class="progress-wrap">
+      <div class="progress-label" id="progress-label">0 / 0 annotated</div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Annotator name -->
+    <div class="name-bar">
+      <label for="annotator-name">Your name:</label>
+      <input type="text" id="annotator-name" placeholder="Enter your full name" />
+      <span class="name-required" id="name-warning" style="display:none">⚠ Please enter your name before saving.</span>
+    </div>
+
+    <!-- Instructions -->
+    <details class="instructions" open>
+      <summary>Instructions (click to collapse)</summary>
+      <ul>
+        <li>Read the paragraph below. It is an excerpt from a scientific paper in which the author <strong>cites</strong> another work.</li>
+        <li>The <span class="legend-highlight">highlighted sentence</span> is the one containing the citation. <span class="legend-cite">#AUTHOR_TAG</span> marks where the cited author's name appears.</li>
+        <li>Your task: select <strong>all labels that apply</strong> to describe the <em>intent</em> of that citation (multiple labels allowed).</li>
+        <li>If there is not enough information to decide, select <strong>Unclear</strong>.</li>
+        <li><strong>Save &amp; Next</strong> (or <strong>Enter</strong>): saves your answer temporarily in this browser and moves to the next sample. <em>Do not close the browser without exporting first.</em></li>
+        <li><strong>⬇ Export</strong>: downloads a JSON file with all your annotations to your computer. <strong>Send this file to <a href="mailto:thuhuongnguyen.wimmics@gmail.com">thuhuongnguyen.wimmics@gmail.com</a> when you are done</strong>, or whenever you want to save your progress permanently. Use <strong>⬆ Import</strong> to reload a previously exported file and continue annotating.</li>
+      </ul>
+      <div class="legend">
+        <div class="legend-item"><span class="legend-highlight">highlighted sentence</span> = sentence containing the citation</div>
+        <div class="legend-item"><span class="legend-cite">#AUTHOR_TAG</span> = cited author's name</div>
+      </div>
+    </details>
+
+    <!-- Navigation -->
+    <div class="nav-bar">
+      <button id="btn-prev">← Prev</button>
+      <span class="nav-counter" id="nav-counter">–</span>
+      <button id="btn-next">Next →</button>
+      <div class="nav-jump">
+        <input type="number" id="jump-input" min="1" placeholder="#" />
+        <button id="btn-jump">Go</button>
+      </div>
+    </div>
+
+    <!-- Context -->
+    <div class="card">
+      <h3>Citation Context <span id="annotated-badge"></span></h3>
+      <div class="paragraph" id="paragraph"></div>
+    </div>
+
+    <!-- Labels -->
+    <div class="card">
+      <h3>Select all applicable labels (multi-label)</h3>
+      <div class="labels-grid" id="labels-grid"></div>
+      <div class="unclear-item" id="unclear-item">
+        <input type="checkbox" id="cb-unclear" />
+        <span>Unclear / cannot determine from context</span>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button class="btn-primary" id="btn-save-next">Save &amp; Next →</button>
+      <button class="btn-secondary" id="btn-save">Save</button>
+      <button class="btn-secondary" id="btn-next-unannotated">Skip to next unannotated</button>
+    </div>
+  </div>
+
+  <footer>
+    <button class="btn-export" id="btn-export">⬇ Export annotations (JSON)</button>
+    <label class="btn-import-label">
+      ⬆ Import annotations
+      <input type="file" id="file-import" accept=".json" style="display:none" />
+    </label>
+    <span class="footer-note">Annotations auto-saved in browser. Export regularly as backup.</span>
+  </footer>
+</div>
+
+<div id="toast"></div>
+
+<script>
+const LABELS = [
+  { id: "background",  name: "background",   desc: "Provides background context or related work" },
+  { id: "uses",        name: "uses",          desc: "Method, tool, or dataset is used" },
+  { id: "motivation",  name: "motivation",    desc: "Motivates or inspired the current work" },
+  { id: "extends",     name: "extends",       desc: "Extends or builds upon the cited work" },
+  { id: "similarities",name: "similarities",  desc: "Similar approaches or results" },
+  { id: "differences", name: "differences",   desc: "Contrasting approaches or results" },
+  { id: "future_work", name: "future_work",   desc: "Mentioned as potential future work" },
+];
+
+const STORAGE_KEY      = "moka_annotations";
+const STORAGE_NAME_KEY = "moka_annotator_name";
+
+let data = [];
+let annotations = {};  // id → { labels: [...], unclear: bool, ts: "..." }
+let idx = 0;
+
+// ── Load ─────────────────────────────────────────────────────────────────────
+async function init() {
+  try {
+    const res = await fetch("data.json");
+    data = await res.json();
+  } catch (e) {
+    document.getElementById("loading").textContent =
+      "Error loading data.json. Make sure you ran prepare_annotation_data.py first.";
+    return;
+  }
+
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) annotations = JSON.parse(saved);
+
+  const savedName = localStorage.getItem(STORAGE_NAME_KEY);
+  if (savedName) document.getElementById("annotator-name").value = savedName;
+  document.getElementById("annotator-name").addEventListener("input", e => {
+    localStorage.setItem(STORAGE_NAME_KEY, e.target.value.trim());
+  });
+
+  buildLabelGrid();
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("app").style.display = "block";
+
+  // Start at first unannotated sample
+  idx = data.findIndex(d => !annotations[d.id]);
+  if (idx === -1) idx = 0;
+
+  render();
+}
+
+// ── Build label checkboxes ────────────────────────────────────────────────────
+function buildLabelGrid() {
+  const grid = document.getElementById("labels-grid");
+  LABELS.forEach(lbl => {
+    const item = document.createElement("label");
+    item.className = "label-item";
+    item.dataset.id = lbl.id;
+    item.innerHTML = `
+      <input type="checkbox" id="cb-${lbl.id}" value="${lbl.id}" />
+      <div>
+        <span class="label-name">${lbl.name}</span>
+        <span class="label-desc">${lbl.desc}</span>
+      </div>`;
+    item.addEventListener("change", () => syncItemStyle(item));
+    grid.appendChild(item);
+  });
+
+  document.getElementById("unclear-item").addEventListener("change", () => {
+    const el = document.getElementById("unclear-item");
+    el.classList.toggle("selected", document.getElementById("cb-unclear").checked);
+  });
+}
+
+function syncItemStyle(item) {
+  const cb = item.querySelector("input[type=checkbox]");
+  item.classList.toggle("selected", cb.checked);
+}
+
+// ── Render current sample ─────────────────────────────────────────────────────
+function render() {
+  if (!data.length) return;
+  const sample = data[idx];
+  const ann    = annotations[sample.id];
+
+  // Counter
+  document.getElementById("nav-counter").textContent =
+    `Sample ${idx + 1} / ${data.length}`;
+
+  // Annotated badge
+  const badge = document.getElementById("annotated-badge");
+  badge.innerHTML = ann ? '<span class="badge-annotated">✓ Annotated</span>' : "";
+
+  // Paragraph
+  const para = document.getElementById("paragraph");
+  para.innerHTML = sample.paragraph.map(sent => {
+    const isCitation = sent === sample.citation_sentence ||
+                       sent.includes("#AUTHOR_TAG");
+    const formatted  = sent.replace(/#AUTHOR_TAG/g,
+      '<span class="author-tag">#AUTHOR_TAG</span>');
+    return `<span class="sentence${isCitation ? " highlight" : ""}">${formatted} </span>`;
+  }).join("");
+
+  // Restore checkboxes
+  LABELS.forEach(lbl => {
+    const cb = document.getElementById(`cb-${lbl.id}`);
+    cb.checked = ann ? ann.labels.includes(lbl.id) : false;
+    syncItemStyle(cb.closest(".label-item"));
+  });
+  const cbUnclear = document.getElementById("cb-unclear");
+  cbUnclear.checked = ann ? (ann.unclear || false) : false;
+  document.getElementById("unclear-item").classList.toggle("selected", cbUnclear.checked);
+
+  // Nav buttons
+  document.getElementById("btn-prev").disabled = idx === 0;
+  document.getElementById("btn-next").disabled = idx === data.length - 1;
+
+  updateProgress();
+}
+
+// ── Collect current annotation ───────────────────────────────────────────────
+function collect() {
+  return {
+    labels:  LABELS.filter(l => document.getElementById(`cb-${l.id}`).checked).map(l => l.id),
+    unclear: document.getElementById("cb-unclear").checked,
+    ts:      new Date().toISOString(),
+  };
+}
+
+function save() {
+  const name = document.getElementById("annotator-name").value.trim();
+  if (!name) {
+    document.getElementById("name-warning").style.display = "inline";
+    document.getElementById("annotator-name").focus();
+    return;
+  }
+  document.getElementById("name-warning").style.display = "none";
+  const sample = data[idx];
+  annotations[sample.id] = collect();
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(annotations));
+  updateProgress();
+  const badge = document.getElementById("annotated-badge");
+  badge.innerHTML = '<span class="badge-annotated">✓ Annotated</span>';
+  toast("Saved ✓");
+}
+
+// ── Progress ─────────────────────────────────────────────────────────────────
+function updateProgress() {
+  const done = Object.keys(annotations).length;
+  const total = data.length;
+  document.getElementById("progress-label").textContent = `${done} / ${total} annotated`;
+  document.getElementById("progress-fill").style.width = `${(done / total * 100).toFixed(1)}%`;
+}
+
+// ── Navigation ───────────────────────────────────────────────────────────────
+document.getElementById("btn-prev").addEventListener("click", () => { idx--; render(); });
+document.getElementById("btn-next").addEventListener("click", () => { idx++; render(); });
+
+document.getElementById("btn-save").addEventListener("click", () => save());
+
+document.getElementById("btn-save-next").addEventListener("click", () => {
+  save();
+  if (idx < data.length - 1) { idx++; render(); }
+});
+
+document.getElementById("btn-next-unannotated").addEventListener("click", () => {
+  const next = data.findIndex((d, i) => i > idx && !annotations[d.id]);
+  if (next !== -1) { idx = next; render(); }
+  else toast("No more unannotated samples ahead");
+});
+
+document.getElementById("btn-jump").addEventListener("click", () => {
+  const v = parseInt(document.getElementById("jump-input").value);
+  if (v >= 1 && v <= data.length) { idx = v - 1; render(); }
+});
+document.getElementById("jump-input").addEventListener("keydown", e => {
+  if (e.key === "Enter") document.getElementById("btn-jump").click();
+});
+
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "INPUT") return;
+  if (e.key === "ArrowLeft"  && idx > 0)              { idx--; render(); }
+  if (e.key === "ArrowRight" && idx < data.length - 1){ idx++; render(); }
+  if (e.key === "Enter") document.getElementById("btn-save-next").click();
+});
+
+// ── Export ───────────────────────────────────────────────────────────────────
+document.getElementById("btn-export").addEventListener("click", () => {
+  const annotator = document.getElementById("annotator-name").value.trim() || "unknown";
+  const out = data.map(d => ({
+    id:        d.id,
+    labels:    annotations[d.id]?.labels  ?? null,
+    unclear:   annotations[d.id]?.unclear ?? null,
+    ts:        annotations[d.id]?.ts      ?? null,
+  }));
+  const exportData = { annotator, exported_at: new Date().toISOString(), annotations: out };
+  const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `annotations_${annotator.replace(/\s+/g,"_")}_${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  toast("Exported ✓");
+});
+
+// ── Import ───────────────────────────────────────────────────────────────────
+document.getElementById("file-import").addEventListener("change", e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    try {
+      const parsed = JSON.parse(ev.target.result);
+      // Support both raw array and export wrapper {annotator, exported_at, annotations:[]}
+      const imported = Array.isArray(parsed) ? parsed : (parsed.annotations ?? []);
+      imported.forEach(item => {
+        if (item.id && item.labels !== null) {
+          annotations[item.id] = {
+            labels:  item.labels  ?? [],
+            unclear: item.unclear ?? false,
+            ts:      item.ts      ?? new Date().toISOString(),
+          };
+        }
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(annotations));
+      render();
+      toast(`Imported ${imported.filter(i => i.labels !== null).length} annotations ✓`);
+    } catch {
+      toast("Error reading file");
+    }
+  };
+  reader.readAsText(file);
+  e.target.value = "";
+});
+
+// ── Toast ─────────────────────────────────────────────────────────────────────
+function toast(msg) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.classList.add("show");
+  setTimeout(() => el.classList.remove("show"), 2000);
+}
+
+init();
+</script>
+</body>
+</html>

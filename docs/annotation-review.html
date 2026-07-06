@@ -1,0 +1,596 @@
+<meta charset="UTF-8">
+<title>Annotation Review - Citation Intent</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #F3F5F8;
+  --surface:  #FFFFFF;
+  --border:   #DDE2EC;
+  --text:     #18202E;
+  --text-2:   #5A657A;
+  --text-3:   #9AA3B2;
+  --accent:   #1A56DB;
+  --acc-lt:   #EEF3FF;
+
+  --c-bg:     #64748B;
+  --c-uses:   #0D9488;
+  --c-mot:    #C2600A;
+  --c-ext:    #7C3AED;
+  --c-sim:    #0369A1;
+  --c-dif:    #B91C1C;
+  --c-fut:    #6B7280;
+
+  --agree-full:    #059669;
+  --agree-partial: #D97706;
+
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--bg);
+}
+
+body { min-height: 100vh; }
+
+/* ── Header ── */
+.header {
+  background: var(--text);
+  color: #fff;
+  padding: 18px 28px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+.header h1 { font-size: 16px; font-weight: 600; letter-spacing: -.01em; }
+.header .sub { font-size: 12px; color: #94A3B8; }
+
+/* ── Layout ── */
+.layout { display: grid; grid-template-columns: 280px 1fr; min-height: calc(100vh - 56px); }
+
+/* ── Sidebar ── */
+.sidebar {
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+}
+.sidebar h2 { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); margin-bottom: 12px; }
+
+#kappaFormula.open { display:block !important; }
+
+/* Kappa summary */
+.kappa-main {
+  background: var(--acc-lt);
+  border: 1px solid #C7D7F5;
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.kappa-main .k-val { font-size: 36px; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; line-height: 1; }
+.kappa-main .k-lbl { font-size: 11px; color: var(--text-2); margin-top: 4px; }
+.kappa-main .k-interp { font-size: 12px; font-weight: 600; color: #374151; margin-top: 6px; }
+
+.label-kappa { margin-bottom: 18px; }
+.lk-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.lk-name { width: 90px; font-size: 12px; color: var(--text-2); flex-shrink: 0; }
+.lk-bar-wrap { flex: 1; height: 8px; background: #E9ECF3; border-radius: 4px; overflow: hidden; }
+.lk-bar { height: 100%; border-radius: 4px; }
+.lk-val { font-size: 11px; font-variant-numeric: tabular-nums; color: var(--text-2); width: 38px; text-align: right; }
+.lk-note { font-size: 10px; color: var(--text-3); }
+
+/* Agreement summary */
+.agree-pills { display: flex; gap: 6px; margin-bottom: 18px; flex-wrap: wrap; }
+.agree-pill {
+  padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600;
+  cursor: pointer; border: 2px solid transparent; transition: .15s;
+}
+.agree-pill.all  { background: #E9ECF3; color: var(--text-2); }
+.agree-pill.full { background: #DCFCE7; color: #166534; }
+.agree-pill.partial { background: #FEF3C7; color: #92400E; }
+.agree-pill.active, .agree-pill:hover { border-color: var(--accent); }
+
+/* Label filter */
+.label-filter { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 18px; }
+.lf-btn {
+  font-size: 11px; padding: 3px 8px; border-radius: 4px; cursor: pointer;
+  border: 1.5px solid transparent; font-weight: 500; transition: .12s;
+  font-family: ui-monospace, 'Cascadia Code', monospace;
+}
+.lf-btn:hover { opacity: .85; }
+.lf-btn.active { border-color: #000 !important; }
+
+/* Search */
+.search-box {
+  width: 100%; padding: 8px 10px; border: 1px solid var(--border);
+  border-radius: 6px; font-size: 13px; color: var(--text);
+  background: var(--bg); outline: none; margin-bottom: 14px;
+}
+.search-box:focus { border-color: var(--accent); background: #fff; }
+
+.stat-row { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-2); margin-top: 6px; }
+
+/* ── Main ── */
+.main { padding: 20px 24px; overflow-x: hidden; }
+
+/* Table */
+.tbl-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+thead th {
+  background: var(--surface);
+  border-bottom: 2px solid var(--border);
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+tbody tr { border-bottom: 1px solid var(--border); transition: background .1s; cursor: pointer; }
+tbody tr:hover { background: var(--acc-lt); }
+tbody tr.expanded { background: var(--acc-lt); }
+td { padding: 10px 12px; vertical-align: top; }
+.td-id { font-family: ui-monospace, 'Cascadia Code', monospace; font-size: 12px; color: var(--text-2); white-space: nowrap; }
+.td-sentence { font-size: 13px; line-height: 1.45; max-width: 340px; }
+.td-sentence .cite-mark { background: #FEF9C3; padding: 0 2px; border-radius: 2px; font-style: italic; }
+.td-acl { font-family: ui-monospace, 'Cascadia Code', monospace; font-size: 11px; }
+.agree-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; }
+
+/* Label chips */
+.chip {
+  display: inline-block; font-size: 10px; font-family: ui-monospace, 'Cascadia Code', monospace;
+  padding: 2px 6px; border-radius: 3px; margin: 1px; font-weight: 500;
+  color: white; white-space: nowrap;
+}
+.chip-background  { background: var(--c-bg); }
+.chip-uses        { background: var(--c-uses); }
+.chip-motivation  { background: var(--c-mot); }
+.chip-extends     { background: var(--c-ext); }
+.chip-similarities{ background: var(--c-sim); }
+.chip-differences { background: var(--c-dif); }
+.chip-future_work { background: var(--c-fut); }
+.chip-empty       { background: #E5E7EB; color: #9CA3AF; }
+
+/* Expanded detail */
+.expand-row td { padding: 0; }
+.expand-panel {
+  background: #FAFBFC;
+  border-top: 1px solid var(--border);
+  padding: 16px 20px;
+  display: none;
+}
+.expand-panel.open { display: block; }
+.ep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.ep-section h4 { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-3); margin-bottom: 8px; }
+.paragraph-box {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+  padding: 12px; font-size: 13px; line-height: 1.6; color: var(--text-2);
+}
+.paragraph-box .cite-sent { color: var(--text); font-weight: 500; background: #FEF9C3; border-radius: 2px; padding: 0 2px; }
+.ann-table { width: 100%; font-size: 13px; }
+.ann-table td { padding: 5px 8px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.ann-table td:first-child { color: var(--text-2); font-weight: 500; width: 90px; }
+.ann-row-gold td { background: #F0FDF4; }
+.ann-row-gold td:first-child { color: var(--agree-full); font-weight: 700; }
+.vote-grid { display: flex; flex-wrap: wrap; gap: 4px; }
+.vote-chip { display: flex; align-items: center; gap: 4px; font-size: 11px; }
+.vote-count { font-size: 10px; color: var(--text-3); font-family: ui-monospace, monospace; }
+
+/* Hidden */
+.hidden { display: none !important; }
+
+/* Pagination */
+.pagination { display: flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 13px; color: var(--text-2); }
+.pg-btn {
+  padding: 5px 12px; border: 1px solid var(--border); border-radius: 5px; background: var(--surface);
+  cursor: pointer; color: var(--text); font-size: 13px;
+}
+.pg-btn:hover:not(:disabled) { background: var(--acc-lt); border-color: var(--accent); }
+.pg-btn:disabled { opacity: .4; cursor: default; }
+.pg-info { font-variant-numeric: tabular-nums; }
+</style>
+
+<div class="header">
+  <h1>Citation Intent Annotation Review</h1>
+  <span class="sub">Huong · Marcos · The boss — 284 items</span>
+</div>
+
+
+
+
+<div class="layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2 style="display:flex;align-items:center;gap:6px">Fleiss' Kappa <button onclick="document.getElementById('kappaFormula').classList.toggle('open')" style="font-size:10px;color:var(--text-2);background:none;border:1px solid var(--border);border-radius:50%;width:16px;height:16px;cursor:pointer;padding:0;line-height:16px;text-align:center;flex-shrink:0">?</button></h2>
+    <div id="kappaFormula" style="margin-bottom:8px;display:none;font-size:10px;color:var(--text-2);background:var(--surface-2,#f8f9fa);border-radius:4px;padding:8px;line-height:1.8">
+      <b style="font-size:10px">How kappa is computed (per label, binary)</b><br>
+      For each item, count how many raters said "yes". Compute observed pairwise agreement P̄, then subtract the agreement expected by chance P<sub>e</sub>:<br>
+      <code style="font-size:10px">κ = (P̄ − P<sub>e</sub>) / (1 − P<sub>e</sub>)</code><br><br>
+
+      <b style="font-size:10px">Example: background (κ = 0.073)</b><br>
+      Out of 284 items:<br>
+      &nbsp;· 225 items: all 3 agree <b>yes</b><br>
+      &nbsp;· 1 item: all 3 agree <b>no</b><br>
+      &nbsp;· <b>58 items (20%): genuine disagreement</b><br><br>
+      Observed agreement = <b>86.4%</b><br>
+      Chance baseline = 92x92 + 8x8 = <b>85.3%</b><br>
+      Gap = only <b>1.1 pp</b>, so kappa = 1.1 / 14.7 = <b>0.073</b><br><br>
+      The low kappa reflects two things: real disagreement on 58 items, and a chance baseline so high (85.3%) that even genuine agreement barely registers. That is why background is excluded from the macro score.
+    </div>
+    <div class="kappa-main" id="kappaMain"></div>
+    <div class="label-kappa" id="labelKappa"></div>
+
+    <h2>Filter by Agreement</h2>
+    <div class="agree-pills" id="agreePills"></div>
+
+    <h2>Filter by Label</h2>
+    <div class="label-filter">
+      <span class="lf-btn" data-label="background"  style="background:#EEF0F3;color:var(--c-bg);border-color:#CBD0DA">background</span>
+      <span class="lf-btn" data-label="uses"         style="background:#F0FDF9;color:var(--c-uses);border-color:#99E6DA">uses</span>
+      <span class="lf-btn" data-label="motivation"   style="background:#FFF7ED;color:var(--c-mot);border-color:#FBD0A1">motivation</span>
+      <span class="lf-btn" data-label="extends"      style="background:#F5F3FF;color:var(--c-ext);border-color:#C4B5FD">extends</span>
+      <span class="lf-btn" data-label="similarities" style="background:#F0F9FF;color:var(--c-sim);border-color:#9DD8F5">similarities</span>
+      <span class="lf-btn" data-label="differences"  style="background:#FFF1F1;color:var(--c-dif);border-color:#FCA5A5">differences</span>
+      <span class="lf-btn" data-label="future_work"  style="background:#F9FAFB;color:var(--c-fut);border-color:#D1D5DB">future_work</span>
+    </div>
+
+    <h2>Search</h2>
+    <input class="search-box" id="searchBox" type="text" placeholder="Search citation text or ID…">
+
+    <div class="stat-row">
+      <span id="statShowing">Showing 284 items</span>
+      <span id="statPage"></span>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <div class="tbl-wrap">
+      <table id="mainTable">
+        <thead>
+          <tr id="tableHead">
+            <th>ID</th>
+            <th>Citation sentence</th>
+            <th>ACL-ARC</th>
+            <!-- annotator columns injected by JS -->
+            <th>Gold ✓</th>
+            <th>Agree</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+    <div class="pagination">
+      <button class="pg-btn" id="pgPrev">← Prev</button>
+      <span class="pg-info" id="pgInfo"></span>
+      <button class="pg-btn" id="pgNext">Next →</button>
+    </div>
+  </main>
+</div>
+
+<script>
+
+let ITEMS = [];
+let KAPPA_DATA = null;
+let N_FULL = 0, N_PARTIAL = 0, N_TOTAL = 0;
+const PAGE_SIZE = 50;
+
+let currentAgree  = 'all';
+let currentLabel  = null;
+let currentSearch = '';
+let currentPage   = 0;
+let expandedId    = null;
+let filtered      = ITEMS;
+
+const LABEL_CLASS = {
+  background:'chip-background', uses:'chip-uses', motivation:'chip-motivation',
+  extends:'chip-extends', similarities:'chip-similarities',
+  differences:'chip-differences', future_work:'chip-future_work'
+};
+
+function chipHtml(labels) {
+  if (!labels || labels.length === 0) return '<span class="chip chip-empty">none</span>';
+  return labels.map(l => `<span class="chip ${LABEL_CLASS[l]||''}">${l}</span>`).join('');
+}
+
+function sentenceHtml(s) {
+  return s.replace(/#AUTHOR_TAG/g, '<span class="cite-mark">#AUTHOR_TAG</span>');
+}
+
+function paragraphHtml(para, citeSent) {
+  return para.map(s => {
+    const clean = s.replace(/#AUTHOR_TAG/g, '<span style="background:#FEF9C3;padding:0 2px;border-radius:2px;font-style:italic">#AUTHOR_TAG</span>');
+    return s === citeSent
+      ? `<span class="cite-sent">${clean}</span>`
+      : clean;
+  }).join(' ');
+}
+
+function applyFilter() {
+  const q = currentSearch.toLowerCase();
+  filtered = ITEMS.filter(item => {
+    if (currentAgree !== 'all' && item.agree !== currentAgree) return false;
+    if (currentLabel) {
+      const inGold = item.gold.includes(currentLabel);
+      const inAny  = Object.values(item.annotations).some(a => a.includes(currentLabel));
+      if (!inGold && !inAny) return false;
+    }
+    if (q) {
+      if (!item.sentence.toLowerCase().includes(q) && !item.id.toLowerCase().includes(q)) return false;
+    }
+    return true;
+  });
+  currentPage = 0;
+  expandedId  = null;
+  renderTable();
+}
+
+function renderTable() {
+  const start = currentPage * PAGE_SIZE;
+  const page  = filtered.slice(start, start + PAGE_SIZE);
+  const tbody = document.getElementById('tableBody');
+
+  tbody.innerHTML = page.map(item => {
+    const agree = item.agree;
+    const dotColor = agree === 'full' ? 'var(--agree-full)' : 'var(--agree-partial)';
+    const agreeLabel = agree === 'full' ? 'Full' : 'Partial';
+
+    const annCols = Object.keys(item.annotations).map(r => `<td>${chipHtml(item.annotations[r])}</td>`).join('');
+    const colspan = 3 + Object.keys(item.annotations).length + 2;
+    return `
+      <tr data-id="${item.id}" onclick="toggleExpand('${item.id}')">
+        <td class="td-id">${item.id}</td>
+        <td class="td-sentence">${sentenceHtml(item.sentence.length > 120 ? item.sentence.slice(0,120).replace(/\S+$/, '') + '...' : item.sentence)}</td>
+        <td class="td-acl"><span style="font-size:11px">${item.acl_arc}</span></td>
+        ${annCols}
+        <td>${chipHtml(item.gold)}</td>
+        <td><span class="agree-dot" style="background:${dotColor}"></span>${agreeLabel}</td>
+      </tr>
+      <tr class="expand-row" id="expand-${item.id}">
+        <td colspan="${colspan}">
+          <div class="expand-panel" id="panel-${item.id}">
+            <div class="ep-grid">
+              <div class="ep-section">
+                <h4>Citation context</h4>
+                <div class="paragraph-box">${paragraphHtml(item.paragraph, item.sentence)}</div>
+              </div>
+              <div class="ep-section">
+                <h4>Annotations</h4>
+                <table class="ann-table">
+                  ${Object.entries(item.annotations).map(([r,labels]) =>
+                    `<tr><td>${r}</td><td>${chipHtml(labels)}</td></tr>`
+                  ).join('')}
+                  <tr class="ann-row-gold"><td>Gold ✓</td><td>${chipHtml(item.gold)}</td></tr>
+                </table>
+                <div style="margin-top:12px">
+                  <h4>Vote counts</h4>
+                  <div class="vote-grid" style="margin-top:6px">
+                    ${Object.entries(item.votes).filter(([,v])=>v>0).map(([l,v])=>
+                      `<span class="vote-chip"><span class="chip ${LABEL_CLASS[l]||''}">${l}</span><span class="vote-count">${v}/3</span></span>`
+                    ).join('')}
+                  </div>
+                </div>
+                <div style="margin-top:10px;font-size:11px;color:var(--text-3)">
+                  ACL-ARC ground truth: <strong style="color:var(--text-2)">${item.acl_arc}</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>`;
+  }).join('');
+
+  // Restore expansion
+  if (expandedId) {
+    const panel = document.getElementById('panel-' + expandedId);
+    const row   = document.querySelector(`tr[data-id="${expandedId}"]`);
+    if (panel) { panel.classList.add('open'); row && row.classList.add('expanded'); }
+  }
+
+  // Pagination
+  const total = filtered.length;
+  const pages = Math.ceil(total / PAGE_SIZE);
+  document.getElementById('pgInfo').textContent =
+    `Page ${currentPage+1} of ${pages} · ${total} items`;
+  document.getElementById('pgPrev').disabled = currentPage === 0;
+  document.getElementById('pgNext').disabled = currentPage >= pages - 1;
+  document.getElementById('statShowing').textContent = `Showing ${total} items`;
+  document.getElementById('statPage').textContent = pages > 1 ? `p.${currentPage+1}/${pages}` : '';
+}
+
+function toggleExpand(id) {
+  const panel = document.getElementById('panel-' + id);
+  const row   = document.querySelector(`tr[data-id="${id}"]`);
+  if (!panel) return;
+  if (expandedId && expandedId !== id) {
+    const prev = document.getElementById('panel-' + expandedId);
+    const prevRow = document.querySelector(`tr[data-id="${expandedId}"]`);
+    if (prev) prev.classList.remove('open');
+    if (prevRow) prevRow.classList.remove('expanded');
+  }
+  const opening = !panel.classList.contains('open');
+  panel.classList.toggle('open');
+  row && row.classList.toggle('expanded', opening);
+  expandedId = opening ? id : null;
+}
+
+// Controls
+document.querySelectorAll('.lf-btn').forEach(el => {
+  el.addEventListener('click', () => {
+    const lbl = el.dataset.label;
+    if (currentLabel === lbl) {
+      currentLabel = null;
+      el.classList.remove('active');
+    } else {
+      document.querySelectorAll('.lf-btn').forEach(x => x.classList.remove('active'));
+      currentLabel = lbl;
+      el.classList.add('active');
+    }
+    applyFilter();
+  });
+});
+
+document.getElementById('searchBox').addEventListener('input', e => {
+  currentSearch = e.target.value;
+  applyFilter();
+});
+
+document.getElementById('pgPrev').addEventListener('click', () => {
+  if (currentPage > 0) { currentPage--; renderTable(); window.scrollTo(0,0); }
+});
+document.getElementById('pgNext').addEventListener('click', () => {
+  if (currentPage < Math.ceil(filtered.length/PAGE_SIZE)-1) { currentPage++; renderTable(); window.scrollTo(0,0); }
+});
+
+// ── Render kappa sidebar ──
+function renderKappaSidebar() {
+  const k = KAPPA_DATA;
+  const LABEL_ORDER = ['future_work','uses','similarities','extends','differences','motivation','background'];
+  const LABEL_CSS = {background:'--c-bg',uses:'--c-uses',motivation:'--c-mot',extends:'--c-ext',
+                     similarities:'--c-sim',differences:'--c-dif',future_work:'--c-fut'};
+  const excl = new Set(k.excluded_labels || []);
+  const macro = k.macro_excl_high_prevalence;
+  const interp = macro < 0.20 ? 'Slight' : macro < 0.40 ? 'Fair' : macro < 0.60 ? 'Moderate' : 'Substantial';
+  const included = LABEL_ORDER.filter(l => !excl.has(l));
+  document.getElementById('kappaMain').innerHTML =
+    `<div class="k-val" style="cursor:pointer" onclick="document.getElementById('macroDetail').style.display=document.getElementById('macroDetail').style.display==='none'?'block':'none'">${macro.toFixed(2)}</div>
+     <div class="k-lbl">macro &kappa; (excl. background)</div>
+     <div class="k-interp">${interp} agreement</div>
+     <div id="macroDetail" style="display:none;margin-top:8px;font-size:10px;color:var(--text-2);background:var(--surface-2,#f8f9fa);border-radius:4px;padding:8px;line-height:1.8;text-align:left">
+       <b style="font-size:10px">Macro κ = average of per-label κ (excl. background)</b><br>
+       ${included.map(l => `${l}: ${k.per_label[l].toFixed(3)}`).join('<br>')}<br>
+       Sum = ${included.reduce((a,l)=>a+k.per_label[l],0).toFixed(3)} / ${included.length} labels = <b>${macro.toFixed(4)}</b>
+     </div>`;
+
+  let html = LABEL_ORDER.map(l => {
+    const v = k.per_label[l];
+    const pct = Math.max(2, v * 100).toFixed(1);
+    const note = excl.has(l) ? ' <span class="lk-note">*</span>' : '';
+    const prev = k.prevalence ? k.prevalence[l] : null;
+    const detail = `<div class="lk-detail" id="lkd-${l}" style="display:none;margin:4px 0 6px;font-size:10px;color:var(--text-2);background:var(--surface-2,#f8f9fa);border-radius:4px;padding:7px;line-height:1.8">
+      ${prev !== null ? `Prevalence = <b>${prev.toFixed(1)}%</b><br>` : ''}
+      kappa = <b>${v.toFixed(3)}</b>
+    </div>`;
+    return `<div class="lk-row" style="cursor:pointer;flex-wrap:wrap" onclick="(function(){var d=document.getElementById('lkd-${l}');var open=d.style.display==='none';document.querySelectorAll('.lk-detail').forEach(x=>x.style.display='none');d.style.display=open?'block':'none';})()">
+      <span class="lk-name">${l}</span>
+      <div class="lk-bar-wrap"><div class="lk-bar" style="width:${pct}%;background:var(${LABEL_CSS[l]})"></div></div>
+      <span class="lk-val">${v.toFixed(3)}${note}</span>
+    </div>${detail}`;
+  }).join('');
+  html += `<div class="lk-note" style="margin-top:6px;font-size:10px;color:var(--text-3)">* excluded: prevalence &gt;85%, kappa unreliable</div>`;
+  document.getElementById('labelKappa').innerHTML = html;
+}
+
+function initUI() {
+  document.getElementById('agreePills').innerHTML =
+    `<span class="agree-pill all active" data-agree="all">All (${N_TOTAL})</span>
+     <span class="agree-pill full" data-agree="full">Full agree (${N_FULL})</span>
+     <span class="agree-pill partial" data-agree="partial">Partial (${N_PARTIAL})</span>`;
+
+  document.querySelectorAll('.agree-pill').forEach(el => {
+    el.addEventListener('click', () => {
+      document.querySelectorAll('.agree-pill').forEach(x => x.classList.remove('active'));
+      el.classList.add('active');
+      currentAgree = el.dataset.agree;
+      applyFilter();
+    });
+  });
+}
+
+async function loadData() {
+  let dataRaw, annGold;
+  try {
+    [dataRaw, annGold] = await Promise.all([
+      fetch('data.json').then(r => r.json()),
+      fetch('annotations/annotations_gold.json').then(r => r.json()),
+    ]);
+  } catch(e) {
+    document.body.innerHTML = `<div style="padding:40px;font-family:sans-serif;color:#c00">
+      <b>Failed to load data.</b><br>Run: <code>python3 -m http.server 8080</code> in the <code>docs/</code> folder,
+      then open <code>http://localhost:8080/annotation_review.html</code><br><br>Error: ${e.message}
+    </div>`;
+    return;
+  }
+
+  // Load manifest to discover annotator files
+  let manifest;
+  try {
+    manifest = await fetch('annotations/manifest.json').then(r => r.json());
+  } catch(e) {
+    document.body.innerHTML = `<div style="padding:40px;font-family:sans-serif;color:#c00">
+      <b>Missing manifest.</b><br>Run: <code>python3 src/sync_annotations.py</code> from the project root.<br><br>Error: ${e.message}
+    </div>`;
+    return;
+  }
+
+  let annFiles;
+  try {
+    annFiles = await Promise.all(
+      manifest.annotators.map(f => fetch(`annotations/${f}`).then(r => r.json()))
+    );
+  } catch(e) {
+    document.body.innerHTML = `<div style="padding:40px;font-family:sans-serif;color:#c00">
+      <b>Failed to load annotation files.</b><br>Run: <code>python3 src/sync_annotations.py</code> from the project root.<br><br>Error: ${e.message}
+    </div>`;
+    return;
+  }
+
+  const LABELS = ['background','uses','motivation','extends','similarities','differences','future_work'];
+  const RATERS = annFiles.map(a => a.annotator);
+
+  // Build per-annotator lookup
+  const lookup = {};
+  for (const ann of annFiles) {
+    const name = ann.annotator;
+    lookup[name] = {};
+    for (const a of ann.annotations) lookup[name][a.id] = a.labels || [];
+  }
+
+  // Build gold lookup from Python-computed gold file
+  const goldLookup = {};
+  for (const a of annGold.annotations) goldLookup[a.id] = a.labels || [];
+
+  ITEMS = dataRaw.map(item => {
+    const annotations = {};
+    for (const r of RATERS) annotations[r] = (lookup[r]||{})[item.id] || [];
+    const gold = goldLookup[item.id] || [];
+    const votes = {};
+    for (const l of LABELS) votes[l] = RATERS.filter(r => annotations[r].includes(l)).length;
+    const sets = RATERS.map(r => JSON.stringify([...annotations[r]].sort()));
+    const agree = sets.every(s => s === sets[0]) ? 'full' : 'partial';
+    return { id: item.id, sentence: item.citation_sentence, paragraph: item.paragraph,
+             acl_arc: item.acl_arc_label, annotations, gold, votes, agree };
+  });
+
+  N_TOTAL = ITEMS.length;
+  N_FULL  = ITEMS.filter(i => i.agree === 'full').length;
+  N_PARTIAL = N_TOTAL - N_FULL;
+
+  // Use kappa computed by Python (compute_gold_standard.py)
+  KAPPA_DATA = annGold.fleiss_kappa;
+
+  // Inject annotator columns into table header
+  const thead = document.getElementById('tableHead');
+  const goldTh = thead.querySelector('th:nth-last-child(2)');
+  for (const r of RATERS) {
+    const th = document.createElement('th');
+    th.textContent = r;
+    thead.insertBefore(th, goldTh);
+  }
+
+  filtered = ITEMS;
+  renderKappaSidebar();
+  initUI();
+  applyFilter();
+}
+
+loadData();
+</script>

@@ -1,0 +1,19 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Output (generated, not committed)
+output/
+
+# Data (large, keep moka test data but ignore converted)
+data/converted/
+
+# OS
+.DS_Store

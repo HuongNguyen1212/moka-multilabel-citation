@@ -1,0 +1,2328 @@
+{
+  "annotator": "Marcos",
+  "exported_at": "2026-07-02T20:24:47.113Z",
+  "annotations": [
+    {
+      "id": "CCT1",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T20:24:14.820Z"
+    },
+    {
+      "id": "CCT2",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T20:24:24.840Z"
+    },
+    {
+      "id": "CCT3",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T20:24:34.617Z"
+    },
+    {
+      "id": "CCT4",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:24:05.097Z"
+    },
+    {
+      "id": "CCT5",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:24:20.616Z"
+    },
+    {
+      "id": "CCT6",
+      "labels": [
+        "background",
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:26:22.818Z"
+    },
+    {
+      "id": "CCT7",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:26:47.900Z"
+    },
+    {
+      "id": "CCT8",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:27:16.596Z"
+    },
+    {
+      "id": "CCT9",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:28:07.825Z"
+    },
+    {
+      "id": "CCT10",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:28:20.846Z"
+    },
+    {
+      "id": "CCT11",
+      "labels": [
+        "uses",
+        "extends"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:29:00.346Z"
+    },
+    {
+      "id": "CCT12",
+      "labels": [
+        "future_work"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:29:16.188Z"
+    },
+    {
+      "id": "CCT13",
+      "labels": [
+        "motivation",
+        "differences"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:30:24.592Z"
+    },
+    {
+      "id": "CCT14",
+      "labels": [
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:30:55.659Z"
+    },
+    {
+      "id": "CCT15",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:31:32.600Z"
+    },
+    {
+      "id": "CCT16",
+      "labels": [
+        "uses",
+        "extends"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:31:58.417Z"
+    },
+    {
+      "id": "CCT17",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:32:25.188Z"
+    },
+    {
+      "id": "CCT18",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:33:03.742Z"
+    },
+    {
+      "id": "CCT19",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:33:38.863Z"
+    },
+    {
+      "id": "CCT20",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:34:11.843Z"
+    },
+    {
+      "id": "CCT21",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:34:45.343Z"
+    },
+    {
+      "id": "CCT22",
+      "labels": [
+        "uses",
+        "extends"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:35:21.197Z"
+    },
+    {
+      "id": "CCT23",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:35:34.810Z"
+    },
+    {
+      "id": "CCT24",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:37:00.560Z"
+    },
+    {
+      "id": "CCT25",
+      "labels": [
+        "uses",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:37:36.006Z"
+    },
+    {
+      "id": "CCT26",
+      "labels": [
+        "differences"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:38:03.443Z"
+    },
+    {
+      "id": "CCT27",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:38:43.222Z"
+    },
+    {
+      "id": "CCT28",
+      "labels": [
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:39:50.354Z"
+    },
+    {
+      "id": "CCT29",
+      "labels": [
+        "motivation"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:40:08.467Z"
+    },
+    {
+      "id": "CCT30",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:40:20.831Z"
+    },
+    {
+      "id": "CCT31",
+      "labels": [
+        "differences"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:41:07.734Z"
+    },
+    {
+      "id": "CCT32",
+      "labels": [
+        "uses",
+        "motivation"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:41:35.279Z"
+    },
+    {
+      "id": "CCT33",
+      "labels": [
+        "uses",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:42:12.124Z"
+    },
+    {
+      "id": "CCT34",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:42:30.179Z"
+    },
+    {
+      "id": "CCT35",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:42:49.924Z"
+    },
+    {
+      "id": "CCT36",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:43:02.549Z"
+    },
+    {
+      "id": "CCT37",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:44:00.631Z"
+    },
+    {
+      "id": "CCT38",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:44:15.756Z"
+    },
+    {
+      "id": "CCT39",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:44:35.006Z"
+    },
+    {
+      "id": "CCT40",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:44:52.210Z"
+    },
+    {
+      "id": "CCT41",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:45:29.047Z"
+    },
+    {
+      "id": "CCT42",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:45:53.426Z"
+    },
+    {
+      "id": "CCT43",
+      "labels": [
+        "motivation",
+        "differences"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:52:13.955Z"
+    },
+    {
+      "id": "CCT44",
+      "labels": [
+        "background",
+        "motivation"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:53:44.721Z"
+    },
+    {
+      "id": "CCT45",
+      "labels": [
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:54:03.612Z"
+    },
+    {
+      "id": "CCT46",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:54:16.579Z"
+    },
+    {
+      "id": "CCT47",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T11:57:31.227Z"
+    },
+    {
+      "id": "CCT48",
+      "labels": [
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:00:37.908Z"
+    },
+    {
+      "id": "CCT49",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:01:35.995Z"
+    },
+    {
+      "id": "CCT50",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:04:32.738Z"
+    },
+    {
+      "id": "CCT51",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:12:36.614Z"
+    },
+    {
+      "id": "CCT52",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:14:04.909Z"
+    },
+    {
+      "id": "CCT53",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:14:18.321Z"
+    },
+    {
+      "id": "CCT54",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:14:29.134Z"
+    },
+    {
+      "id": "CCT55",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:14:53.554Z"
+    },
+    {
+      "id": "CCT56",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:15:19.199Z"
+    },
+    {
+      "id": "CCT57",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:15:35.491Z"
+    },
+    {
+      "id": "CCT58",
+      "labels": [
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:15:50.073Z"
+    },
+    {
+      "id": "CCT59",
+      "labels": [
+        "differences"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:16:00.228Z"
+    },
+    {
+      "id": "CCT60",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:16:14.694Z"
+    },
+    {
+      "id": "CCT61",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:16:24.786Z"
+    },
+    {
+      "id": "CCT62",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:16:46.731Z"
+    },
+    {
+      "id": "CCT63",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:17:03.498Z"
+    },
+    {
+      "id": "CCT64",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:17:19.651Z"
+    },
+    {
+      "id": "CCT65",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:17:29.980Z"
+    },
+    {
+      "id": "CCT66",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:17:44.947Z"
+    },
+    {
+      "id": "CCT67",
+      "labels": [
+        "background",
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:19:56.883Z"
+    },
+    {
+      "id": "CCT68",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:20:12.978Z"
+    },
+    {
+      "id": "CCT69",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:21:05.669Z"
+    },
+    {
+      "id": "CCT70",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:22:09.518Z"
+    },
+    {
+      "id": "CCT71",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:22:26.855Z"
+    },
+    {
+      "id": "CCT72",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:22:36.755Z"
+    },
+    {
+      "id": "CCT73",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:22:49.113Z"
+    },
+    {
+      "id": "CCT74",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:22:59.146Z"
+    },
+    {
+      "id": "CCT75",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:23:18.250Z"
+    },
+    {
+      "id": "CCT76",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:23:50.129Z"
+    },
+    {
+      "id": "CCT77",
+      "labels": [
+        "background",
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:24:37.853Z"
+    },
+    {
+      "id": "CCT78",
+      "labels": [
+        "background",
+        "extends"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:25:54.844Z"
+    },
+    {
+      "id": "CCT79",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:26:18.814Z"
+    },
+    {
+      "id": "CCT80",
+      "labels": [
+        "background",
+        "extends"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:26:33.556Z"
+    },
+    {
+      "id": "CCT81",
+      "labels": [
+        "extends"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:26:51.381Z"
+    },
+    {
+      "id": "CCT82",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:27:04.330Z"
+    },
+    {
+      "id": "CCT83",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:27:12.934Z"
+    },
+    {
+      "id": "CCT84",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:27:29.876Z"
+    },
+    {
+      "id": "CCT85",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:27:36.201Z"
+    },
+    {
+      "id": "CCT86",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:27:51.200Z"
+    },
+    {
+      "id": "CCT87",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:28:06.745Z"
+    },
+    {
+      "id": "CCT88",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:28:14.633Z"
+    },
+    {
+      "id": "CCT89",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:28:25.271Z"
+    },
+    {
+      "id": "CCT90",
+      "labels": [
+        "background",
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:28:39.116Z"
+    },
+    {
+      "id": "CCT91",
+      "labels": [
+        "background",
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:29:24.140Z"
+    },
+    {
+      "id": "CCT92",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:29:40.678Z"
+    },
+    {
+      "id": "CCT93",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:30:02.740Z"
+    },
+    {
+      "id": "CCT94",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:30:59.434Z"
+    },
+    {
+      "id": "CCT95",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:31:11.929Z"
+    },
+    {
+      "id": "CCT96",
+      "labels": [
+        "background",
+        "extends"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:31:22.458Z"
+    },
+    {
+      "id": "CCT97",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:31:38.771Z"
+    },
+    {
+      "id": "CCT98",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:31:46.296Z"
+    },
+    {
+      "id": "CCT99",
+      "labels": [
+        "background",
+        "motivation"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:31:55.325Z"
+    },
+    {
+      "id": "CCT100",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:32:06.370Z"
+    },
+    {
+      "id": "CCT101",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:32:13.950Z"
+    },
+    {
+      "id": "CCT102",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:32:22.420Z"
+    },
+    {
+      "id": "CCT103",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:32:30.666Z"
+    },
+    {
+      "id": "CCT104",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:32:35.699Z"
+    },
+    {
+      "id": "CCT105",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:32:42.216Z"
+    },
+    {
+      "id": "CCT106",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:32:56.962Z"
+    },
+    {
+      "id": "CCT107",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:33:12.995Z"
+    },
+    {
+      "id": "CCT108",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:33:21.782Z"
+    },
+    {
+      "id": "CCT109",
+      "labels": [
+        "background",
+        "differences"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:33:48.253Z"
+    },
+    {
+      "id": "CCT110",
+      "labels": [
+        "background",
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:34:07.423Z"
+    },
+    {
+      "id": "CCT111",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:34:14.490Z"
+    },
+    {
+      "id": "CCT112",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:35:00.536Z"
+    },
+    {
+      "id": "CCT113",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:35:36.044Z"
+    },
+    {
+      "id": "CCT114",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:36:21.098Z"
+    },
+    {
+      "id": "CCT115",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:36:28.935Z"
+    },
+    {
+      "id": "CCT116",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:36:35.359Z"
+    },
+    {
+      "id": "CCT117",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:36:45.194Z"
+    },
+    {
+      "id": "CCT118",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:36:52.272Z"
+    },
+    {
+      "id": "CCT119",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:36:57.634Z"
+    },
+    {
+      "id": "CCT120",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:37:11.688Z"
+    },
+    {
+      "id": "CCT121",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:37:19.705Z"
+    },
+    {
+      "id": "CCT122",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:37:30.359Z"
+    },
+    {
+      "id": "CCT123",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:37:42.696Z"
+    },
+    {
+      "id": "CCT124",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:37:58.571Z"
+    },
+    {
+      "id": "CCT125",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:38:19.150Z"
+    },
+    {
+      "id": "CCT126",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:38:29.796Z"
+    },
+    {
+      "id": "CCT127",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:38:47.091Z"
+    },
+    {
+      "id": "CCT128",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:39:02.779Z"
+    },
+    {
+      "id": "CCT129",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:39:11.237Z"
+    },
+    {
+      "id": "CCT130",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:39:18.888Z"
+    },
+    {
+      "id": "CCT131",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:39:24.199Z"
+    },
+    {
+      "id": "CCT132",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:39:41.341Z"
+    },
+    {
+      "id": "CCT133",
+      "labels": [
+        "background",
+        "motivation"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:40:23.078Z"
+    },
+    {
+      "id": "CCT134",
+      "labels": [
+        "background",
+        "uses",
+        "motivation"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:40:43.440Z"
+    },
+    {
+      "id": "CCT135",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:40:57.669Z"
+    },
+    {
+      "id": "CCT136",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:41:13.336Z"
+    },
+    {
+      "id": "CCT137",
+      "labels": [
+        "background",
+        "extends",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:41:23.923Z"
+    },
+    {
+      "id": "CCT138",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:41:35.114Z"
+    },
+    {
+      "id": "CCT139",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:41:44.894Z"
+    },
+    {
+      "id": "CCT140",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:41:53.806Z"
+    },
+    {
+      "id": "CCT141",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:42:04.135Z"
+    },
+    {
+      "id": "CCT142",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-01T12:42:13.602Z"
+    },
+    {
+      "id": "CCT143",
+      "labels": [],
+      "unclear": false,
+      "ts": "2026-07-01T12:42:23.927Z"
+    },
+    {
+      "id": "CCT144",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:05:13.799Z"
+    },
+    {
+      "id": "CCT145",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:05:34.500Z"
+    },
+    {
+      "id": "CCT146",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:06:01.332Z"
+    },
+    {
+      "id": "CCT147",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:06:19.014Z"
+    },
+    {
+      "id": "CCT148",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:06:32.395Z"
+    },
+    {
+      "id": "CCT149",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:06:45.579Z"
+    },
+    {
+      "id": "CCT150",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:07:00.866Z"
+    },
+    {
+      "id": "CCT151",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:07:14.529Z"
+    },
+    {
+      "id": "CCT152",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:07:27.852Z"
+    },
+    {
+      "id": "CCT153",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:07:59.246Z"
+    },
+    {
+      "id": "CCT154",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:08:04.033Z"
+    },
+    {
+      "id": "CCT155",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:08:11.637Z"
+    },
+    {
+      "id": "CCT156",
+      "labels": [
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:08:48.282Z"
+    },
+    {
+      "id": "CCT157",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:11:11.105Z"
+    },
+    {
+      "id": "CCT158",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:11:38.011Z"
+    },
+    {
+      "id": "CCT159",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:12:03.903Z"
+    },
+    {
+      "id": "CCT160",
+      "labels": [
+        "uses",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:12:16.066Z"
+    },
+    {
+      "id": "CCT161",
+      "labels": [
+        "differences"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:12:44.867Z"
+    },
+    {
+      "id": "CCT162",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:12:58.069Z"
+    },
+    {
+      "id": "CCT163",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:13:13.728Z"
+    },
+    {
+      "id": "CCT164",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:13:26.688Z"
+    },
+    {
+      "id": "CCT165",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:13:35.719Z"
+    },
+    {
+      "id": "CCT166",
+      "labels": [
+        "motivation"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:13:53.012Z"
+    },
+    {
+      "id": "CCT167",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:14:05.059Z"
+    },
+    {
+      "id": "CCT168",
+      "labels": [
+        "motivation"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:14:18.485Z"
+    },
+    {
+      "id": "CCT169",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:14:29.045Z"
+    },
+    {
+      "id": "CCT170",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:14:41.002Z"
+    },
+    {
+      "id": "CCT171",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:14:53.047Z"
+    },
+    {
+      "id": "CCT172",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:15:01.462Z"
+    },
+    {
+      "id": "CCT173",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:15:13.791Z"
+    },
+    {
+      "id": "CCT174",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:15:28.461Z"
+    },
+    {
+      "id": "CCT175",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:15:35.166Z"
+    },
+    {
+      "id": "CCT176",
+      "labels": [
+        "background",
+        "motivation"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:15:47.917Z"
+    },
+    {
+      "id": "CCT177",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:15:54.744Z"
+    },
+    {
+      "id": "CCT178",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:16:02.406Z"
+    },
+    {
+      "id": "CCT179",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:16:13.883Z"
+    },
+    {
+      "id": "CCT180",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:16:20.124Z"
+    },
+    {
+      "id": "CCT181",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:16:31.420Z"
+    },
+    {
+      "id": "CCT182",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:16:41.471Z"
+    },
+    {
+      "id": "CCT183",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:16:50.872Z"
+    },
+    {
+      "id": "CCT184",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:17:05.933Z"
+    },
+    {
+      "id": "CCT185",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:17:24.984Z"
+    },
+    {
+      "id": "CCT186",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:17:35.981Z"
+    },
+    {
+      "id": "CCT187",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:17:48.370Z"
+    },
+    {
+      "id": "CCT188",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:17:59.575Z"
+    },
+    {
+      "id": "CCT189",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:18:08.875Z"
+    },
+    {
+      "id": "CCT190",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:18:16.991Z"
+    },
+    {
+      "id": "CCT191",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:18:23.907Z"
+    },
+    {
+      "id": "CCT192",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:18:37.392Z"
+    },
+    {
+      "id": "CCT193",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:19:06.894Z"
+    },
+    {
+      "id": "CCT194",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:19:13.602Z"
+    },
+    {
+      "id": "CCT195",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:19:43.676Z"
+    },
+    {
+      "id": "CCT196",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:20:01.467Z"
+    },
+    {
+      "id": "CCT197",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:20:12.132Z"
+    },
+    {
+      "id": "CCT198",
+      "labels": [
+        "background",
+        "uses",
+        "motivation"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:20:26.187Z"
+    },
+    {
+      "id": "CCT199",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:20:34.260Z"
+    },
+    {
+      "id": "CCT200",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:20:47.637Z"
+    },
+    {
+      "id": "CCT201",
+      "labels": [
+        "background",
+        "motivation"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:20:58.964Z"
+    },
+    {
+      "id": "CCT202",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:21:10.708Z"
+    },
+    {
+      "id": "CCT203",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:21:18.299Z"
+    },
+    {
+      "id": "CCT204",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:21:24.676Z"
+    },
+    {
+      "id": "CCT205",
+      "labels": [
+        "background",
+        "motivation"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:21:40.077Z"
+    },
+    {
+      "id": "CCT206",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:21:48.979Z"
+    },
+    {
+      "id": "CCT207",
+      "labels": [
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:21:58.920Z"
+    },
+    {
+      "id": "CCT208",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:23:06.603Z"
+    },
+    {
+      "id": "CCT209",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:23:13.995Z"
+    },
+    {
+      "id": "CCT210",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:23:24.557Z"
+    },
+    {
+      "id": "CCT211",
+      "labels": [
+        "background",
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:23:48.618Z"
+    },
+    {
+      "id": "CCT212",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:24:11.717Z"
+    },
+    {
+      "id": "CCT213",
+      "labels": [
+        "background",
+        "uses",
+        "motivation"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:24:31.262Z"
+    },
+    {
+      "id": "CCT214",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:24:48.350Z"
+    },
+    {
+      "id": "CCT215",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:24:53.658Z"
+    },
+    {
+      "id": "CCT216",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:25:04.098Z"
+    },
+    {
+      "id": "CCT217",
+      "labels": [
+        "background",
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:25:21.906Z"
+    },
+    {
+      "id": "CCT218",
+      "labels": [
+        "uses",
+        "motivation"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:25:41.675Z"
+    },
+    {
+      "id": "CCT219",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:25:51.441Z"
+    },
+    {
+      "id": "CCT220",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:26:11.301Z"
+    },
+    {
+      "id": "CCT221",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:26:23.056Z"
+    },
+    {
+      "id": "CCT222",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:26:33.067Z"
+    },
+    {
+      "id": "CCT223",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:26:42.007Z"
+    },
+    {
+      "id": "CCT224",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:26:58.416Z"
+    },
+    {
+      "id": "CCT225",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:27:09.161Z"
+    },
+    {
+      "id": "CCT226",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:27:32.106Z"
+    },
+    {
+      "id": "CCT227",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:27:45.547Z"
+    },
+    {
+      "id": "CCT228",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:27:56.528Z"
+    },
+    {
+      "id": "CCT229",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:28:29.633Z"
+    },
+    {
+      "id": "CCT230",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:28:42.310Z"
+    },
+    {
+      "id": "CCT231",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:29:02.032Z"
+    },
+    {
+      "id": "CCT232",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:29:08.125Z"
+    },
+    {
+      "id": "CCT233",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:29:22.307Z"
+    },
+    {
+      "id": "CCT234",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:29:30.850Z"
+    },
+    {
+      "id": "CCT235",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:29:39.148Z"
+    },
+    {
+      "id": "CCT236",
+      "labels": [
+        "future_work"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:29:57.057Z"
+    },
+    {
+      "id": "CCT237",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:30:18.820Z"
+    },
+    {
+      "id": "CCT238",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:30:31.498Z"
+    },
+    {
+      "id": "CCT239",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:30:36.778Z"
+    },
+    {
+      "id": "CCT240",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:30:40.423Z"
+    },
+    {
+      "id": "CCT241",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:30:49.918Z"
+    },
+    {
+      "id": "CCT242",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:31:11.728Z"
+    },
+    {
+      "id": "CCT243",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:31:39.106Z"
+    },
+    {
+      "id": "CCT244",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:31:44.446Z"
+    },
+    {
+      "id": "CCT245",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:32:00.016Z"
+    },
+    {
+      "id": "CCT246",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:32:09.555Z"
+    },
+    {
+      "id": "CCT247",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:32:15.930Z"
+    },
+    {
+      "id": "CCT248",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:32:27.692Z"
+    },
+    {
+      "id": "CCT249",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:32:59.491Z"
+    },
+    {
+      "id": "CCT250",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:33:13.368Z"
+    },
+    {
+      "id": "CCT251",
+      "labels": [
+        "uses",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:33:45.903Z"
+    },
+    {
+      "id": "CCT252",
+      "labels": [
+        "background",
+        "differences"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:33:55.893Z"
+    },
+    {
+      "id": "CCT253",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:34:06.065Z"
+    },
+    {
+      "id": "CCT254",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:34:14.344Z"
+    },
+    {
+      "id": "CCT255",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:34:23.765Z"
+    },
+    {
+      "id": "CCT256",
+      "labels": [],
+      "unclear": false,
+      "ts": "2026-07-02T14:34:40.038Z"
+    },
+    {
+      "id": "CCT257",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:35:13.687Z"
+    },
+    {
+      "id": "CCT258",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:35:33.650Z"
+    },
+    {
+      "id": "CCT259",
+      "labels": [],
+      "unclear": false,
+      "ts": "2026-07-02T14:35:55.716Z"
+    },
+    {
+      "id": "CCT260",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:36:01.958Z"
+    },
+    {
+      "id": "CCT261",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:36:11.166Z"
+    },
+    {
+      "id": "CCT262",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:36:34.762Z"
+    },
+    {
+      "id": "CCT263",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:36:43.329Z"
+    },
+    {
+      "id": "CCT264",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:36:50.421Z"
+    },
+    {
+      "id": "CCT265",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:37:17.317Z"
+    },
+    {
+      "id": "CCT266",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:37:26.092Z"
+    },
+    {
+      "id": "CCT267",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:37:34.150Z"
+    },
+    {
+      "id": "CCT268",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:37:41.453Z"
+    },
+    {
+      "id": "CCT269",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:37:55.777Z"
+    },
+    {
+      "id": "CCT270",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:38:03.174Z"
+    },
+    {
+      "id": "CCT271",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:38:10.391Z"
+    },
+    {
+      "id": "CCT272",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:38:21.757Z"
+    },
+    {
+      "id": "CCT273",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:38:50.142Z"
+    },
+    {
+      "id": "CCT274",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:39:15.447Z"
+    },
+    {
+      "id": "CCT275",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:39:30.568Z"
+    },
+    {
+      "id": "CCT276",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:39:42.312Z"
+    },
+    {
+      "id": "CCT277",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:39:53.024Z"
+    },
+    {
+      "id": "CCT278",
+      "labels": [
+        "future_work"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:40:01.364Z"
+    },
+    {
+      "id": "CCT279",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:40:09.447Z"
+    },
+    {
+      "id": "CCT280",
+      "labels": [
+        "uses",
+        "motivation"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:40:26.970Z"
+    },
+    {
+      "id": "CCT281",
+      "labels": [
+        "background"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:40:32.639Z"
+    },
+    {
+      "id": "CCT282",
+      "labels": [
+        "uses"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:40:44.310Z"
+    },
+    {
+      "id": "CCT283",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:40:57.061Z"
+    },
+    {
+      "id": "CCT284",
+      "labels": [
+        "background",
+        "similarities"
+      ],
+      "unclear": false,
+      "ts": "2026-07-02T14:41:09.764Z"
+    }
+  ]
+}

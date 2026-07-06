@@ -1,0 +1,1848 @@
+{
+  "annotator": "gold_majority_vote",
+  "exported_at": "2026-07-03T10:54:50.868Z",
+  "source": "Majority vote (threshold=2/3) from: annotations_Huong_2026-07-03.json, annotations_Marcos_2026-07-02.json, annotations_The_boss_2026-07-03.json",
+  "fleiss_kappa": {
+    "per_label": {
+      "background": 0.0731,
+      "uses": 0.5572,
+      "motivation": 0.1233,
+      "extends": 0.4092,
+      "similarities": 0.486,
+      "differences": 0.385,
+      "future_work": 0.6267
+    },
+    "prevalence": {
+      "background": 92.0,
+      "uses": 15.7,
+      "motivation": 15.7,
+      "extends": 3.3,
+      "similarities": 13.1,
+      "differences": 4.8,
+      "future_work": 2.6
+    },
+    "macro_all": 0.3801,
+    "macro_excl_high_prevalence": 0.4312,
+    "excluded_labels": [
+      "background"
+    ]
+  },
+  "annotations": [
+    {
+      "id": "CCT1",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT2",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT3",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT4",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT5",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT6",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT7",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT8",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT9",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT10",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT11",
+      "labels": [
+        "extends"
+      ]
+    },
+    {
+      "id": "CCT12",
+      "labels": [
+        "future_work"
+      ]
+    },
+    {
+      "id": "CCT13",
+      "labels": [
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT14",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT15",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT16",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT17",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT18",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT19",
+      "labels": [
+        "background",
+        "differences"
+      ]
+    },
+    {
+      "id": "CCT20",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT21",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT22",
+      "labels": [
+        "background",
+        "extends",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT23",
+      "labels": [
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT24",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT25",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT26",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT27",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT28",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT29",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT30",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT31",
+      "labels": [
+        "background",
+        "differences"
+      ]
+    },
+    {
+      "id": "CCT32",
+      "labels": [
+        "background",
+        "future_work",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT33",
+      "labels": [
+        "background",
+        "future_work"
+      ]
+    },
+    {
+      "id": "CCT34",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT35",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT36",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT37",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT38",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT39",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT40",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT41",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT42",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT43",
+      "labels": [
+        "background",
+        "differences"
+      ]
+    },
+    {
+      "id": "CCT44",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT45",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT46",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT47",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT48",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT49",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT50",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT51",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT52",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT53",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT54",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT55",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT56",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT57",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT58",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT59",
+      "labels": [
+        "background",
+        "differences"
+      ]
+    },
+    {
+      "id": "CCT60",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT61",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT62",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT63",
+      "labels": [
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT64",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT65",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT66",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT67",
+      "labels": [
+        "background",
+        "future_work",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT68",
+      "labels": [
+        "background",
+        "future_work"
+      ]
+    },
+    {
+      "id": "CCT69",
+      "labels": [
+        "background",
+        "extends"
+      ]
+    },
+    {
+      "id": "CCT70",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT71",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT72",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT73",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT74",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT75",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT76",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT77",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT78",
+      "labels": [
+        "background",
+        "extends"
+      ]
+    },
+    {
+      "id": "CCT79",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT80",
+      "labels": [
+        "background",
+        "extends"
+      ]
+    },
+    {
+      "id": "CCT81",
+      "labels": [
+        "background",
+        "extends"
+      ]
+    },
+    {
+      "id": "CCT82",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT83",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT84",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT85",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT86",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT87",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT88",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT89",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT90",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT91",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT92",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT93",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT94",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT95",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT96",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT97",
+      "labels": [
+        "background",
+        "differences"
+      ]
+    },
+    {
+      "id": "CCT98",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT99",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT100",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT101",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT102",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT103",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT104",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT105",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT106",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT107",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT108",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT109",
+      "labels": [
+        "background",
+        "differences"
+      ]
+    },
+    {
+      "id": "CCT110",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT111",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT112",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT113",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT114",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT115",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT116",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT117",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT118",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT119",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT120",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT121",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT122",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT123",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT124",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT125",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT126",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT127",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT128",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT129",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT130",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT131",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT132",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT133",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT134",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT135",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT136",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT137",
+      "labels": [
+        "background",
+        "extends"
+      ]
+    },
+    {
+      "id": "CCT138",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT139",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT140",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT141",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT142",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT143",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT144",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT145",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT146",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT147",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT148",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT149",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT150",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT151",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT152",
+      "labels": [
+        "background",
+        "differences"
+      ]
+    },
+    {
+      "id": "CCT153",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT154",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT155",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT156",
+      "labels": [
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT157",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT158",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT159",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT160",
+      "labels": [
+        "background",
+        "similarities",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT161",
+      "labels": [
+        "background",
+        "differences"
+      ]
+    },
+    {
+      "id": "CCT162",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT163",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT164",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT165",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT166",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT167",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT168",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT169",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT170",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT171",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT172",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT173",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT174",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT175",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT176",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT177",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT178",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT179",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT180",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT181",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT182",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT183",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT184",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT185",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT186",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT187",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT188",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT189",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT190",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT191",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT192",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT193",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT194",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT195",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT196",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT197",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT198",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT199",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT200",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT201",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT202",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT203",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT204",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT205",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT206",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT207",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT208",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT209",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT210",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT211",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT212",
+      "labels": [
+        "background",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT213",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT214",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT215",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT216",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT217",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT218",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT219",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT220",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT221",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT222",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT223",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT224",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT225",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT226",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT227",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT228",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT229",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT230",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT231",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT232",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT233",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT234",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT235",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT236",
+      "labels": [
+        "background",
+        "future_work"
+      ]
+    },
+    {
+      "id": "CCT237",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT238",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT239",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT240",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT241",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT242",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT243",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT244",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT245",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT246",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT247",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT248",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT249",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT250",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT251",
+      "labels": [
+        "background",
+        "motivation",
+        "uses"
+      ]
+    },
+    {
+      "id": "CCT252",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT253",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT254",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT255",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT256",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT257",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT258",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT259",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT260",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT261",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT262",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT263",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT264",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT265",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT266",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT267",
+      "labels": [
+        "background",
+        "future_work"
+      ]
+    },
+    {
+      "id": "CCT268",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT269",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT270",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT271",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT272",
+      "labels": [
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT273",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT274",
+      "labels": [
+        "background",
+        "differences"
+      ]
+    },
+    {
+      "id": "CCT275",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT276",
+      "labels": [
+        "background",
+        "extends"
+      ]
+    },
+    {
+      "id": "CCT277",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT278",
+      "labels": [
+        "future_work"
+      ]
+    },
+    {
+      "id": "CCT279",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT280",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT281",
+      "labels": [
+        "background"
+      ]
+    },
+    {
+      "id": "CCT282",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    },
+    {
+      "id": "CCT283",
+      "labels": [
+        "background",
+        "similarities"
+      ]
+    },
+    {
+      "id": "CCT284",
+      "labels": [
+        "background",
+        "motivation"
+      ]
+    }
+  ]
+}
