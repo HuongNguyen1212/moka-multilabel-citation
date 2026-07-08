@@ -1,10 +1,10 @@
 {
   "annotator": "gold_majority_vote",
-  "exported_at": "2026-07-08T16:34:51.093Z",
+  "exported_at": "2026-07-08T18:38:14.911Z",
   "source": "Majority vote (threshold=2/3) from: annotations_Huong_2026-07-03.json, annotations_Marcos_2026-07-02.json, annotations_The_boss_2026-07-03.json",
   "fleiss_kappa": {
     "per_label": {
-      "background": 0.0731,
+      "background": 0.084,
       "uses": 0.5572,
       "motivation": 0.1233,
       "extends": 0.4092,
@@ -13,7 +13,7 @@
       "future_work": 0.6267
     },
     "prevalence": {
-      "background": 92.0,
+      "background": 92.4,
       "uses": 15.7,
       "motivation": 15.7,
       "extends": 3.3,
@@ -21,7 +21,7 @@
       "differences": 4.8,
       "future_work": 2.6
     },
-    "macro_all": 0.3801,
+    "macro_all": 0.3816,
     "macro_excl_high_prevalence": 0.4312,
     "excluded_labels": [
       "background"
